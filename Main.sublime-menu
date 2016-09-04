@@ -1,0 +1,13 @@
+[
+{
+    "id" : "debuglog",
+    "caption" : "debuglog",
+    "children":
+	[
+	{
+		"caption" : "run",
+		"command" : "debuglog"
+	}
+	]
+}
+]
