@@ -16,7 +16,9 @@ class DebuglogCommand(sublime_plugin.TextCommand):
 			found = False
 
 			# Look for any classes
-			class_regions = view.find_by_selector('entity.name.type.class')
+			# class_regions = view.find_by_selector('entity.name.type.class')
+			class_regions = view.find_by_selector('entity.name.type')
+			print(class_regions)
 			for r in reversed(class_regions):
 				row, col = view.rowcol(r.begin())
 				if row <= region_row:
@@ -25,7 +27,8 @@ class DebuglogCommand(sublime_plugin.TextCommand):
 					break;
 
             # Look for any functions
-			function_regions = view.find_by_selector('meta.function - meta.function.inline')
+			function_regions = view.find_by_selector('entity.name.function')
+			print(function_regions)
 			if function_regions:
 				for r in reversed(function_regions):
 					row, col = view.rowcol(r.begin())
